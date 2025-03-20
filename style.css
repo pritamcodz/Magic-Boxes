@@ -1,0 +1,276 @@
+:root{
+  /* Fonts */
+  --ff-poppins:  "Poppins", sans-serif;
+
+  --ff-roboto: "Roboto", sans-serif;;
+
+  --ff-inter: "Inter", sans-serif;
+
+  /* Colors */
+  --bg-white: #f5f5f5;
+  --primary-white: #fff;
+
+  --bg-red: #ff3d3d4d;
+  --secondary-red: #ff3d3d80;
+  --primary-red: #ff3a3a;
+
+  --bg-yellow: #cccc124d;
+  --secondary-yellow: #cccc1280;
+  --primary-yellow: #f5f50d;
+
+  --bg-green: #5dff5d4d;
+  --secondary-green: #5dff5d80;
+  --primary-green: #00e600;
+
+  --bg-pink: #ffa5b44d;
+  --secondary-pink: #ffa5b480;
+  --primary-pink: #ff748b;
+  
+  --bg-purple: #ff69ff4d;
+  --secondary-purple: #ff69ff80;
+  --primary-purple: #e600e6;
+
+  --bg-blue: #5bd6fc67;
+  --secondary-blue: #5bd6fca1;
+  --primary-blue: #00bcf5;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  background: var(--bg-white);
+  color: var(--primary-white);
+  font-family: var(--ff-poppins);
+
+  display: flex;
+
+  overflow-x: hidden;
+}
+
+/* Aside Styling Starts*/
+aside{
+  width: 20%;
+  padding: 40px 20px;
+  background: var(--bg-pink);
+}
+#shapes{
+  width: 100%;
+  min-height: 200px;
+  /* Css Goes Here */
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+}
+#shapes > section {
+  min-height: 200px;
+  background: #ffffff5b;
+
+  border-left: 4px solid var(--primary-purple);
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+#shapes > section > h2{
+  padding: 6px;
+  font-size: 0.8rem;
+  background: var(--bg-purple);
+  color: var(--primary-purple);
+  text-transform: uppercase;
+
+  user-select: none;
+  pointer-events: none;
+}
+#shapes > section > div{
+  flex-grow: 1;
+  padding: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: start;
+  gap: 20px;
+
+}
+
+.square{
+  width: 40px;
+  height: 40px;
+  background: var(--primary-white);
+
+  border-radius: 2px;
+
+  cursor: grab;
+  user-select: none;
+}
+.dragging{
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.circle{
+  width: 40px;
+  height: 40px;
+  background: var(--primary-white);
+
+  border-radius: 50%;
+
+  cursor: grab;
+  user-select: none;
+}
+/* Aside Styling Ends*/
+
+
+main{
+  width: 80%;
+  padding: 100px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 80px;
+  column-gap: 50px;
+}
+
+.container {
+  width: 300px;
+  height: 150px;
+  padding: 20px;
+  border-radius: 6px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  position: relative;
+
+  box-shadow: 4px 4px 20px 10px #8f8f8f59;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 20px;
+}
+
+.container::before {
+  content: "";
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  font-size: 1.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  top: -40px;
+  left: 0;
+
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+#red .square,
+#red .circle{
+  background: var(--primary-red);
+}
+#green .square,
+#green .circle{
+  background: var(--primary-green);
+}
+#yellow .square,
+#yellow .circle{
+  background: var(--primary-yellow);
+}
+#pink .square,
+#pink .circle{
+  background: var(--primary-pink);
+}
+#purple .square,
+#purple .circle{
+  background: var(--primary-purple);
+}
+
+/* -------------------------------- Color Classes -------------------------------- */
+.red{
+  background: var(--bg-red);
+}
+.red::before{
+  content: "Red";
+  background: var(--secondary-red);
+}
+.red::after{
+  background: var(--secondary-red);
+}
+.red > .box{
+  background: var(--primary-red);
+}
+
+.pink{
+  background: var(--bg-pink);
+}
+.pink::before{
+  content: "Pink";
+  background: var(--secondary-pink);
+}
+.pink::after{
+  background: var(--secondary-pink);
+}
+.pink > .box{
+  background: var(--primary-pink);
+}
+
+.green{
+  background: var(--bg-green);
+}
+.green::before{
+  content: "Green";
+  background: var(--secondary-green);
+}
+.green::after{
+  background: var(--secondary-green);
+}
+.green > .box{
+  background: var(--primary-green);
+}
+
+
+.yellow{
+  background: var(--bg-yellow);
+}
+.yellow::before{
+  content: "Yellow";
+  background: var(--secondary-yellow);
+}
+.yellow::after{
+  background: var(--secondary-yellow);
+}
+.yellow > .box{
+  background: var(--primary-yellow);
+}
+
+
+.purple{
+  background: var(--bg-purple);
+}
+.purple::before{
+  content: "Purple";
+  background: var(--secondary-purple);
+}
+.purple::after{
+  background: var(--secondary-purple);
+}
+.purple > .box{
+  background: var(--primary-purple);
+}
